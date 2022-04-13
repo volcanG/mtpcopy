@@ -31,7 +31,7 @@ struct Args {
     mirror: bool,
     verbose: u32,
 }
-
+# 主方法
 fn main() {
     pretty_env_logger::init();
     let result = run();
