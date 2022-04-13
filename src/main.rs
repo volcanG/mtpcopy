@@ -31,7 +31,7 @@ struct Args {
     mirror: bool,
     verbose: u32,
 }
-# 主方法
+
 fn main() {
     pretty_env_logger::init();
     let result = run();
@@ -182,7 +182,12 @@ fn show_version() {
         Some(hash) => format!(" ({})", hash),
         None => String::new(),
     };
-    println!("{} {}{}", env!("CARGO_PKG_NAME"), env!("CARGO_PKG_VERSION"), hash_info);
+    println!(
+        "{} {}{}",
+        env!("CARGO_PKG_NAME"),
+        env!("CARGO_PKG_VERSION"),
+        hash_info
+    );
 }
 
 fn find_command(s: &str) -> Option<Command> {
